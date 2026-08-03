@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ワイズシステムサービス 遺品整理・ハウスクリーニング | 奈良県桜井市</title>
+<meta name="description" content="奈良県桜井市のワイズシステムサービスによる遺品整理・生前整理・ハウスクリーニングサービス。丁寧・迅速・明朗会計で対応します。">
+<style>
+  :root{
+    --main:#3b5f6b;
+    --main-dark:#294449;
+    --accent:#c8a25c;
+    --bg:#f7f6f3;
+    --text:#2b2b2b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;color:var(--text);background:var(--bg);line-height:1.8;}
+  a{color:inherit;text-decoration:none;}
+  .container{max-width:960px;margin:0 auto;padding:0 20px;}
+
+  header{background:#fff;position:sticky;top:0;z-index:100;box-shadow:0 2px 6px rgba(0,0,0,0.06);}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;max-width:960px;margin:0 auto;}
+  .logo{font-size:1.15rem;font-weight:bold;color:var(--main-dark);}
+  .logo small{display:block;font-size:0.68rem;font-weight:normal;color:#666;}
+  .tel-box{text-align:right;}
+  .tel-box .tel{font-size:1.25rem;font-weight:bold;color:var(--main-dark);}
+  .tel-box .hours{font-size:0.72rem;color:#666;}
+
+  /* Hero with fading slideshow */
+  .hero{position:relative;height:480px;overflow:hidden;color:#fff;}
+  .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.8s ease-in-out;
+    display:flex;align-items:center;justify-content:center;text-align:center;}
+  .slide.active{opacity:1;}
+  .slide::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.35);}
+  .slide1{background:linear-gradient(135deg,#4b6d78,#294449);}
+  .slide2{background:linear-gradient(135deg,#6b8a8f,#3b5f6b);}
+  .slide3{background:linear-gradient(135deg,#8a9b8e,#4b6d78);}
+  .slide-content{position:relative;z-index:2;padding:20px;}
+  .slide-content h1{font-size:1.9rem;margin-bottom:14px;text-shadow:0 2px 8px rgba(0,0,0,0.4);}
+  .slide-content p{font-size:1rem;opacity:0.95;margin-bottom:26px;}
+  .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:14px 30px;border-radius:4px;font-weight:bold;font-size:0.95rem;}
+  .btn-primary{background:var(--accent);color:#2b2b2b;}
+  .btn-outline{background:transparent;border:2px solid #fff;color:#fff;}
+  .dots{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:3;}
+  .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.5);}
+  .dot.active{background:#fff;}
+
+  section{padding:60px 20px;}
+  .section-title{text-align:center;margin-bottom:40px;}
+  .section-title h2{font-size:1.5rem;color:var(--main-dark);}
+  .section-title span{display:block;font-size:0.75rem;color:#999;letter-spacing:2px;margin-top:6px;}
+
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;}
+  .service-card{background:#fff;border-radius:8px;padding:28px 22px;box-shadow:0 2px 10px rgba(0,0,0,0.06);text-align:center;}
+  .service-card .icon{font-size:2.1rem;margin-bottom:12px;}
+  .service-card h3{color:var(--main-dark);margin-bottom:10px;font-size:1.05rem;}
+  .service-card p{font-size:0.88rem;color:#555;}
+
+  .why{background:#fff;}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:20px;}
+  .why-item{padding:20px;border-left:4px solid var(--main);background:var(--bg);border-radius:4px;}
+  .why-item h3{color:var(--main-dark);margin-bottom:8px;font-size:1rem;}
+  .why-item p{font-size:0.88rem;color:#555;}
+
+  .flow-list{max-width:700px;margin:0 auto;}
+  .flow-item{display:flex;gap:18px;margin-bottom:24px;align-items:flex-start;}
+  .flow-num{background:var(--main);color:#fff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0;font-size:0.9rem;}
+  .flow-text h3{font-size:0.98rem;color:var(--main-dark);margin-bottom:4px;}
+  .flow-text p{font-size:0.88rem;color:#555;}
+
+  .company{background:#fff;}
+  table.company-table{width:100%;max-width:700px;margin:0 auto;border-collapse:collapse;}
+  table.company-table th,table.company-table td{padding:14px 16px;border-bottom:1px solid #eee;text-align:left;font-size:0.9rem;}
+  table.company-table th{width:130px;color:var(--main-dark);white-space:nowrap;}
+
+  .map-frame{margin-top:24px;text-align:center;}
+  .map-frame iframe{width:100%;max-width:700px;height:280px;border:0;border-radius:8px;}
+
+  .contact{background:var(--main-dark);color:#fff;text-align:center;}
+  .contact .section-title h2{color:#fff;}
+  .contact .section-title span{color:rgba(255,255,255,0.7);}
+  .contact-tel{font-size:1.9rem;font-weight:bold;margin:10px 0;}
+  .contact-tel a{color:var(--accent);}
+  .contact .hours{opacity:0.85;margin-bottom:24px;}
+
+  footer{background:#1a1a1a;color:#ccc;text-align:center;padding:28px 20px;font-size:0.78rem;}
+
+  @media (max-width:600px){
+    .hero{height:420px;}
+    .slide-content h1{font-size:1.4rem;}
+    .header-inner{flex-direction:column;align-items:flex-start;gap:6px;}
+    .tel-box{text-align:left;}
+  }
+
+  /* Splash / loading screen */
+  #splash{
+    position:fixed;inset:0;background:#fff;z-index:9999;
+    display:flex;align-items:center;justify-content:center;
+    transition:opacity 0.8s ease, visibility 0.8s ease;
+  }
+  #splash.hide{opacity:0;visibility:hidden;pointer-events:none;}
+  .splash-logo{display:flex;align-items:center;gap:14px;opacity:0;animation:splashFadeIn 1s ease forwards 0.2s;}
+  .splash-logo .kanji{
+    font-size:2.6rem;font-weight:bold;color:var(--main-dark);
+    border:2px solid var(--main-dark);border-radius:6px;padding:2px 8px;
+  }
+  .splash-logo .name{font-size:1.6rem;letter-spacing:2px;color:var(--main);font-weight:bold;}
+  .splash-logo .name small{display:block;font-size:0.6rem;letter-spacing:1px;color:#999;font-weight:normal;margin-top:2px;}
+  @keyframes splashFadeIn{
+    from{opacity:0;transform:translateY(10px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  body.no-scroll{overflow:hidden;}
+</style>
+</head>
+<body class="no-scroll">
+
+<div id="splash">
+  <div class="splash-logo">
+    <span class="kanji">要</span>
+    <span class="name">Y'z SYSTEM SERVICE<small>遺品整理・ハウスクリーニング</small></span>
+  </div>
+</div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">ワイズシステムサービス<small>遺品整理・ハウスクリーニング</small></div>
+    <div class="tel-box">
+      <div class="tel"><a href="tel:0744474501">0744-47-4501</a></div>
+      <div class="hours">受付時間 平日9:00〜17:00</div>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="slide slide1 active">
+    <div class="slide-content">
+      <h1>大切な故人様の想いを、<br>丁寧にかたちに。</h1>
+      <p>遺品整理・生前整理はワイズシステムサービスにお任せください。</p>
+      <div class="cta-buttons">
+        <a href="tel:0744474501" class="btn btn-primary">📞 無料相談・お見積り</a>
+        <a href="#contact" class="btn btn-outline">お問い合わせフォーム</a>
+      </div>
+    </div>
+  </div>
+  <div class="slide slide2">
+    <div class="slide-content">
+      <h1>お部屋を隅々まで、<br>清潔に。</h1>
+      <p>プロのハウスクリーニングで、快適な住まいをお届けします。</p>
+      <div class="cta-buttons">
+        <a href="tel:0744474501" class="btn btn-primary">📞 無料相談・お見積り</a>
+        <a href="#contact" class="btn btn-outline">お問い合わせフォーム</a>
+      </div>
+    </div>
+  </div>
+  <div class="slide slide3">
+    <div class="slide-content">
+      <h1>明朗会計・安心対応。<br>まずはお気軽にご相談を。</h1>
+      <p>奈良県桜井市を拠点に、地域のお客様に寄り添った対応をいたします。</p>
+      <div class="cta-buttons">
+        <a href="tel:0744474501" class="btn btn-primary">📞 無料相談・お見積り</a>
+        <a href="#contact" class="btn btn-outline">お問い合わせフォーム</a>
+      </div>
+    </div>
+  </div>
+  <div class="dots">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="container">
+    <div class="section-title">
+      <h2>対応サービス</h2>
+      <span>SERVICE</span>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="icon">🏠</div>
+        <h3>遺品整理</h3>
+        <p>大切な故人様の遺品を、ご遺族のお気持ちに寄り添いながら丁寧に整理いたします。</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">📦</div>
+        <h3>生前整理</h3>
+        <p>ご本人様やご家族様の意向を伺いながら、身の回りの整理をお手伝いします。</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🧹</div>
+        <h3>ハウスクリーニング</h3>
+        <p>キッチン・浴室・エアコンなど、水回りから居住空間全体まで清掃いたします。</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🧴</div>
+        <h3>特殊清掃</h3>
+        <p>特殊な状況下でのお部屋の清掃・消臭作業にも専門的に対応いたします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="container">
+    <div class="section-title">
+      <h2>選ばれる理由</h2>
+      <span>WHY US</span>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <h3>お気持ちに寄り添う対応</h3>
+        <p>大切な思い出の品を、丁寧に扱いながら作業を進めます。</p>
+      </div>
+      <div class="why-item">
+        <h3>調査・お見積り無料</h3>
+        <p>まずは現地を確認し、内容にご納得いただいてから作業を行います。</p>
+      </div>
+      <div class="why-item">
+        <h3>明朗会計</h3>
+        <p>作業前に料金を明確にご提示し、追加費用が発生しないよう努めます。</p>
+      </div>
+      <div class="why-item">
+        <h3>地域密着の安心感</h3>
+        <p>奈良県桜井市を拠点に、地域のお客様に長く信頼される対応を心がけています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="flow">
+  <div class="container">
+    <div class="section-title">
+      <h2>ご依頼の流れ</h2>
+      <span>FLOW</span>
+    </div>
+    <div class="flow-list">
+      <div class="flow-item">
+        <div class="flow-num">1</div>
+        <div class="flow-text">
+          <h3>お電話・フォームでお問い合わせ</h3>
+          <p>ご状況をお聞かせください。ご相談は無料です。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">2</div>
+        <div class="flow-text">
+          <h3>現地調査・お見積り</h3>
+          <p>スタッフが現地を確認し、内容と料金をご説明します。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">3</div>
+        <div class="flow-text">
+          <h3>ご納得いただいてから作業開始</h3>
+          <p>お見積り内容にご了承いただいた上で、作業を行います。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">4</div>
+        <div class="flow-text">
+          <h3>完了・アフターフォロー</h3>
+          <p>作業完了後もご不明点やご相談を承ります。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="company">
+  <div class="container">
+    <div class="section-title">
+      <h2>会社情報</h2>
+      <span>COMPANY</span>
+    </div>
+    <table class="company-table">
+      <tr><th>会社名</th><td>ワイズシステムサービス</td></tr>
+      <tr><th>創業</th><td>1993年</td></tr>
+      <tr><th>代表者</th><td>山本貫太</td></tr>
+      <tr><th>所在地</th><td>〒633-0007 奈良県桜井市外山602 2F</td></tr>
+      <tr><th>電話番号</th><td><a href="tel:0744474501">0744-47-4501</a></td></tr>
+      <tr><th>受付時間</th><td>平日 09:00〜17:00（土日定休）</td></tr>
+      <tr><th>対応エリア</th><td>奈良県桜井市を中心とした近隣エリア</td></tr>
+    </table>
+    <div class="map-frame">
+      <iframe src="https://www.google.com/maps/embed/v1/place?q=%E5%A5%88%E8%89%AF%E7%9C%8C%E6%A1%9C%E4%BA%95%E5%B8%82%E5%A4%96%E5%B1%B1602&language=ja&zoom=16&maptype=roadmap&key=AIzaSyCucBnVrKinLowf5-ChLoxp-jjWZ82TuTU" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>お問い合わせ</h2>
+      <span>CONTACT</span>
+    </div>
+    <p>まずはお気軽にご連絡ください。</p>
+    <div class="contact-tel"><a href="tel:0744474501">📞 0744-47-4501</a></div>
+    <div class="hours">受付時間：平日 09:00〜17:00（土日定休）</div>
+    <a href="tel:0744474501" class="btn btn-primary">電話で問い合わせる</a>
+  </div>
+</section>
+
+<footer>
+  <p>ワイズシステムサービス｜〒633-0007 奈良県桜井市外山602 2F｜TEL 0744-47-4501</p>
+  <p style="margin-top:8px;">Copyright &copy; 2026 ワイズシステムサービス</p>
+</footer>
+
+<script>
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('splash').classList.add('hide');
+      document.body.classList.remove('no-scroll');
+    }, 1200);
+  });
+
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  let current = 0;
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }, 4000);
+</script>
+
+</body>
+</html>
